@@ -15,6 +15,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { CardComponent } from './components/card/card.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { SideNavItemComponent } from './components/side-nav-item/side-nav-item.component';
+import { SideNavComponent } from './components/side-nav/side-nav.component';
 
 
 
@@ -26,6 +28,8 @@ import { FilterComponent } from './components/filter/filter.component';
     SectionComponent,
     CardComponent,
     FilterComponent,
+    SideNavItemComponent,
+    SideNavComponent,
   ],
   imports: [
     CommonModule,
@@ -44,6 +48,8 @@ import { FilterComponent } from './components/filter/filter.component';
     SectionComponent,
     CardComponent,
     FilterComponent,
+    SideNavItemComponent,
+    SideNavComponent,
   ],
 })
 export class KcUiModule {}

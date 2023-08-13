@@ -11,3 +11,5 @@ export * from './lib/components/button/button.component';
 export * from './lib/components/section/section.component';
 export * from './lib/components/card/card.component';
 export * from './lib/components/filter/filter.component';
+export * from './lib/components/side-nav/side-nav.component';
+export * from './lib/components/side-nav-item/side-nav-item.component';
