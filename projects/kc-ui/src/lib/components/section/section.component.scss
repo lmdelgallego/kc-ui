@@ -1,5 +1,11 @@
 @import '../../../styles/global.scss';
 
+
+.kc-section{
+  font-family: $font-family;
+  color: $color-text;
+}
+
 .kc-section-header {
   display: flex;
   justify-content: space-between;

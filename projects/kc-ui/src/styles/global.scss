@@ -72,11 +72,5 @@ $secondary: #ff4081;
 $secondary-light: #ff79b0;
 $secondary-dark: #c60055;
 $border-color: rgba(0, 0, 0, 0.12);
-
-html,
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  color: #3C3C3C;
-  height: 100%;
-}
+$font-family: Roboto, "Helvetica Neue", sans-serif;
+$color-text: #3C3C3C;
