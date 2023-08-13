@@ -7,6 +7,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { ButtonComponent } from './components/button/button.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BaseLayoutComponent } from './components/base-layout/base-layout.component';
+import { SectionComponent } from './components/section/section.component';
 
 
 
@@ -15,14 +16,14 @@ import { BaseLayoutComponent } from './components/base-layout/base-layout.compon
     ButtonComponent,
     HeaderComponent,
     BaseLayoutComponent,
+    SectionComponent,
   ],
   imports: [BrowserAnimationsModule, MatToolbarModule, MatSidenavModule],
   exports: [
-    MatToolbarModule,
-    MatSidenavModule,
     ButtonComponent,
     HeaderComponent,
     BaseLayoutComponent,
+    SectionComponent,
   ],
 })
 export class KcUiModule {}

@@ -1,0 +1,10 @@
+@import '../../../styles/global.scss';
+
+.kc-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h2{
+    color: $primary
+  }
+}

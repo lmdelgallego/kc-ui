@@ -1,0 +1,82 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+$kimcarta: (
+  50 : #e0ecf0,
+  100 : #b3d0d9,
+  200 : #80b1c0,
+  300 : #4d91a7,
+  400 : #267a94,
+  500 : #006281,
+  600 : #005a79,
+  700 : #00506e,
+  800 : #004664,
+  900 : #003451,
+  A100 : #84caff,
+  A200 : #51b4ff,
+  A400 : #1e9eff,
+  A700 : #0493ff,
+  contrast: (50 : #3C3C3C,
+    100 : #3C3C3C,
+    200 : #3C3C3C,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #3C3C3C,
+    A200 : #3C3C3C,
+    A400 : #3C3C3C,
+    A700 : #ffffff,
+  )
+);
+
+$KimCartaApp-primary: mat.define-palette($kimcarta);
+$kclib-tester-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$kclib-tester-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$kclib-tester-theme: mat.define-light-theme((color: (primary: $KimCartaApp-primary,
+        accent: $kclib-tester-accent,
+        warn: $kclib-tester-warn,
+      )));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($kclib-tester-theme);
+
+@import '_normalize.scss';
+@import '_utils.scss';
+
+$primary: #006281;
+$primary-light: #4d91a7;
+$primary-dark: #00506e;
+$secondary: #ff4081;
+$secondary-light: #ff79b0;
+$secondary-dark: #c60055;
+$border-color: rgba(0, 0, 0, 0.12);
+
+html,
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: #3C3C3C;
+  height: 100%;
+}

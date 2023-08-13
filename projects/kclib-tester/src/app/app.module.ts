@@ -5,10 +5,14 @@ import { KcUiModule } from 'kc-ui';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './pages/home/home.component';
+import { Page2Component } from './pages/page2/page2.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    Page2Component
   ],
   imports: [
     BrowserModule,
