@@ -10,3 +10,4 @@ export * from './lib/components/header/header.component';
 export * from './lib/components/button/button.component';
 export * from './lib/components/section/section.component';
 export * from './lib/components/card/card.component';
+export * from './lib/components/filter/filter.component';

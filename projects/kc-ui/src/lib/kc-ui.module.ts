@@ -3,6 +3,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatChipsModule } from '@angular/material/chips';
 
 import { ButtonComponent } from './components/button/button.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -11,7 +14,7 @@ import { SectionComponent } from './components/section/section.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { CardComponent } from './components/card/card.component';
-import { MatCardModule } from '@angular/material/card';
+import { FilterComponent } from './components/filter/filter.component';
 
 
 
@@ -22,6 +25,7 @@ import { MatCardModule } from '@angular/material/card';
     BaseLayoutComponent,
     SectionComponent,
     CardComponent,
+    FilterComponent,
   ],
   imports: [
     CommonModule,
@@ -29,7 +33,9 @@ import { MatCardModule } from '@angular/material/card';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule,
+    MatChipsModule,
   ],
   exports: [
     ButtonComponent,
@@ -37,6 +43,7 @@ import { MatCardModule } from '@angular/material/card';
     BaseLayoutComponent,
     SectionComponent,
     CardComponent,
+    FilterComponent,
   ],
 })
 export class KcUiModule {}

@@ -1,0 +1,13 @@
+<div class="kc-filter">
+  <span class="kc-filter-label">{{label}}:</span>
+  <div class="kc-filter-items">
+
+    <mat-chip *ngFor=" let option of options "
+    (click)="changeSelected(option)" role="button" class="kc-filter-chip" [class.active]="status == option" >
+      <div class="kc-filter-chip-content">
+        <span>{{getOptionLabel(option)}}</span>
+        <mat-icon class="kc-filter-chip-remove" *ngIf="status == option" >cancel</mat-icon>
+      </div>
+    </mat-chip>
+  </div>
+</div>
