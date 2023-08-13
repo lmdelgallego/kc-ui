@@ -1,0 +1,31 @@
+.base-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.base-layout .main {
+  display: inline-flex;
+  flex: 1;
+  height: calc(100% - 64px);
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1024px;
+}
+
+
+.sidenav-container {
+  flex: 1;
+}
+
+
+.sidenav-sidebar {
+  border-right: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+  padding: 2.25rem 0 0 0;
+}
+
+.page-content {
+  background-color: white;
+  padding: 2.75rem 1.5rem;
+}
