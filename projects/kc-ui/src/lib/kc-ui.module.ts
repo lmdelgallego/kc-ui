@@ -8,6 +8,8 @@ import { ButtonComponent } from './components/button/button.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BaseLayoutComponent } from './components/base-layout/base-layout.component';
 import { SectionComponent } from './components/section/section.component';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -18,7 +20,13 @@ import { SectionComponent } from './components/section/section.component';
     BaseLayoutComponent,
     SectionComponent,
   ],
-  imports: [BrowserAnimationsModule, MatToolbarModule, MatSidenavModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule
+  ],
   exports: [
     ButtonComponent,
     HeaderComponent,

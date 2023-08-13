@@ -2,7 +2,6 @@
  * Public API Surface of kc-ui
  */
 
-export * from './lib/kc-ui.service';
 export * from './lib/kc-ui.module';
 
 // Components
