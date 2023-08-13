@@ -17,3 +17,18 @@ const meta: Meta<SideNavItemComponent> = {
 };
 
 export default meta;
+
+type Story = StoryObj<SideNavItemComponent>;
+export const Default: Story = {
+  render: (args: SideNavItemComponent) => ({
+    props: args,
+    template: `
+      <kc-side-nav-item [routerLink]="url">
+        Home
+      </kc-side-nav-item>
+    `,
+  }),
+  args: {
+    url: '/',
+  },
+};
