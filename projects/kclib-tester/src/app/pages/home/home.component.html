@@ -1,3 +1,88 @@
-<kc-section title="Title">
+<kc-section title="Frequent Asked Questions">
 
+  <!-- Expansion module -->
+  <mat-accordion>
+    <mat-expansion-panel style="margin-bottom: 8px;">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Question 1
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>This is the primary content of the panel.</p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel style="margin-bottom: 8px;">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Question 2
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>This is the primary content of the panel.</p>
+    </mat-expansion-panel>
+
+  </mat-accordion>
+
+</kc-section>
+
+<kc-section title="Table">
+  <kc-filter sectionActionHeader (selected)="changeFilter($event)" label="Select filter" [options]="filters" ></kc-filter>
+
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z1">
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+      <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.lastName}} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        share
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+
+</kc-section>
+
+
+<kc-section title="Explore similar cards">
+  <div class="exploreCards">
+    <kc-card>
+      <div card-title>Similar Card 1</div>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+      <div card-footer>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </div>
+    </kc-card>
+    <kc-card>
+      <div card-title>Similar Card 2</div>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+      <div card-footer>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </div>
+    </kc-card>
+  </div>
 </kc-section>
