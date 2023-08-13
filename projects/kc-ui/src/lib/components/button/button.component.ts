@@ -11,9 +11,6 @@ export class ButtonComponent {
   @Input('classes') classes: string = '';
   @Input('disabled') disabled: boolean = false;
   @Input('color') color: string = 'primary';
-  @Input('type') type: string = 'button';
-  @Input('variant') variant: string = 'basic';
-  @Input('size') size: string = 'medium';
   @Input('icon') icon: string = '';
   @Input('iconPosition') iconPosition: string = 'left';
 

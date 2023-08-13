@@ -133,14 +133,14 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-80913acbb6daa45097df4de0d517892f0f0c74aa1bd88c94d32ee653dc701c39ceac2c9ad45e1d53912edbc434cd55bd2f2f366b20e8dab5500eeeeb9eac12eb",
+            "id": "component-ButtonComponent-fb9a8bb29ec532a28d6c4d71f30b1d4ea10f385e85bdcd5d9ba99afd5e15dd95805282dc14324695a1d5d435fd9e829ab28aee52c95ba61797231f9833cef85f",
             "file": "projects/kc-ui/src/lib/components/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "kc-button",
+            "selector": "kc-button[basic]",
             "styleUrls": [
                 "./button.component.scss"
             ],
@@ -150,10 +150,112 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "classes",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "color",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "icon",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "iconPosition",
+                    "defaultValue": "'left'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "id",
+                    "defaultValue": "'kc-button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "name",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "click",
+                    "defaultValue": "new EventEmitter<MouseEvent>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "EventEmitter<MouseEvent>"
+                }
+            ],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "onClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -163,16 +265,24 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'kc-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n})\nexport class ButtonComponent {}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output} from '@angular/core';\n\n@Component({\n  selector: 'kc-button[basic]',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n})\nexport class ButtonComponent {\n  @Input('id') id: string = 'kc-button';\n  @Input('name') name: string = '';\n  @Input('classes') classes: string = '';\n  @Input('disabled') disabled: boolean = false;\n  @Input('color') color: string = 'primary';\n  @Input('icon') icon: string = '';\n  @Input('iconPosition') iconPosition: string = 'left';\n\n  @Output('click') handlerClick: EventEmitter<MouseEvent> =\n    new EventEmitter<MouseEvent>();\n\n  constructor() {}\n\n  onClick(event: MouseEvent) {\n    this.handlerClick.emit(event);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": "@import '../../../styles/global.scss';\n\n.kc-button{\n  font-family: $font-family;\n}\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<button mat-button>Basic</button>\n"
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 18
+            },
+            "templateData": "<button\n    [id]=\"id\"\n    [name]=\"name\"\n    [ngClass]=\"classes\"\n    [type]=\"type\"\n    [color]=\"color\"\n    [disabled]=\"disabled\"\n    class=\"kc-button\"\n    (click)=\"onClick($event)\"\n    mat-button\n>\n    <ng-content></ng-content>\n    <mat-icon *ngIf=\"icon && iconPosition=='right'\" class=\"kc-button__icon\" iconPositionEnd>{{ icon }}</mat-icon>\n    <mat-icon *ngIf=\"icon && iconPosition=='left'\" class=\"kc-button__icon\">{{ icon }}</mat-icon>\n</button>\n"
         },
         {
             "name": "CardComponent",
@@ -787,7 +897,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: (args: ButtonComponent) => ({\n    props: args,\n  }),\n}"
+                "defaultValue": "{\n  render: (args: ButtonComponent) => ({\n    props: args,\n    template: `\n      <kc-button color=\"primary\" basic>\n        Button\n      </kc-button>\n    `,\n  }),\n}"
             },
             {
                 "name": "Default",
@@ -820,6 +930,36 @@
                 "defaultValue": "{\n  render: (args: SectionComponent) => ({\n    props: args,\n    template: `\n      <kc-section [title]=\"title\">\n        <p>Section Content</p>\n      </kc-section>\n    `,\n  }),\n  args: {\n    title: 'Section Title',\n  },\n}"
             },
             {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: (args: ButtonComponent) => ({\n    props: args,\n    template: `\n      <kc-button color=\"primary\" disabled basic>\n        Button\n      </kc-button>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "IconLeft",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: (args: ButtonComponent) => ({\n    props: args,\n    template: `\n      <kc-button color=\"primary\" icon='home' basic>\n        Button\n      </kc-button>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "IconRight",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: (args: ButtonComponent) => ({\n    props: args,\n    template: `\n      <kc-button color=\"primary\" icon='home' iconPosition='right' basic>\n        Button\n      </kc-button>\n    `,\n  }),\n}"
+            },
+            {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -837,7 +977,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  title: 'COMPONENTS/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n    }),\n  ],\n}"
+                "defaultValue": "{\n  title: 'COMPONENTS/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        MatButtonModule,\n        MatIconModule\n      ],\n    }),\n  ],\n}"
             },
             {
                 "name": "meta",
@@ -1051,7 +1191,37 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: (args: ButtonComponent) => ({\n    props: args,\n  }),\n}"
+                    "defaultValue": "{\n  render: (args: ButtonComponent) => ({\n    props: args,\n    template: `\n      <kc-button color=\"primary\" basic>\n        Button\n      </kc-button>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args: ButtonComponent) => ({\n    props: args,\n    template: `\n      <kc-button color=\"primary\" disabled basic>\n        Button\n      </kc-button>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "IconLeft",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args: ButtonComponent) => ({\n    props: args,\n    template: `\n      <kc-button color=\"primary\" icon='home' basic>\n        Button\n      </kc-button>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "IconRight",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args: ButtonComponent) => ({\n    props: args,\n    template: `\n      <kc-button color=\"primary\" icon='home' iconPosition='right' basic>\n        Button\n      </kc-button>\n    `,\n  }),\n}"
                 },
                 {
                     "name": "meta",
@@ -1061,7 +1231,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\n  title: 'COMPONENTS/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n    }),\n  ],\n}"
+                    "defaultValue": "{\n  title: 'COMPONENTS/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        MatButtonModule,\n        MatIconModule\n      ],\n    }),\n  ],\n}"
                 }
             ],
             "projects/kc-ui/src/lib/components/filter/Filter.stories.ts": [
@@ -1274,6 +1444,36 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "IconLeft",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "IconRight",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -1285,7 +1485,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {
