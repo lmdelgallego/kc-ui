@@ -57,7 +57,7 @@
     <ng-container matColumnDef="actions">
       <mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</mat-header-cell>
       <mat-cell *matCellDef="let element">
-        share
+        <kc-button color="primary" icon="share" iconPosition="left" basic>Share</kc-button>
       </mat-cell>
     </ng-container>
 
@@ -75,8 +75,7 @@
       <div card-title>Similar Card 1</div>
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
       <div card-footer>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
+        <kc-button type="submit" color="primary" icon="arrow_forward" iconPosition="right" basic>LIKE</kc-button>
       </div>
     </kc-card>
     <kc-card>

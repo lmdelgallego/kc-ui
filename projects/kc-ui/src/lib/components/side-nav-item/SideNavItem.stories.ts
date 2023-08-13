@@ -11,7 +11,7 @@ const meta: Meta<SideNavItemComponent> = {
   render: (args) => ({ props: args }),
   decorators: [
     moduleMetadata({
-      imports: [],
+      imports: [CommonModule],
     }),
   ],
 };

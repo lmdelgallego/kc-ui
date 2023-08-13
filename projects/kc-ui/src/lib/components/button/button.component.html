@@ -1,1 +1,15 @@
-<p>button works!</p>
+<button
+    [id]="id"
+    [name]="name"
+    [ngClass]="classes"
+    [type]="type"
+    [color]="color"
+    [disabled]="disabled"
+    class="kc-button"
+    (click)="onClick($event)"
+    mat-button
+>
+    <ng-content></ng-content>
+    <mat-icon *ngIf="icon && iconPosition=='right'" class="kc-button__icon" iconPositionEnd>{{ icon }}</mat-icon>
+    <mat-icon *ngIf="icon && iconPosition=='left'" class="kc-button__icon">{{ icon }}</mat-icon>
+</button>
