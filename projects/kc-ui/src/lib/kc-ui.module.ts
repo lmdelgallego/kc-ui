@@ -10,6 +10,8 @@ import { BaseLayoutComponent } from './components/base-layout/base-layout.compon
 import { SectionComponent } from './components/section/section.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { CardComponent } from './components/card/card.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -19,19 +21,22 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     BaseLayoutComponent,
     SectionComponent,
+    CardComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatCardModule
   ],
   exports: [
     ButtonComponent,
     HeaderComponent,
     BaseLayoutComponent,
     SectionComponent,
+    CardComponent,
   ],
 })
 export class KcUiModule {}

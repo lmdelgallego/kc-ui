@@ -1,0 +1,42 @@
+@use '@angular/material' as mat;
+@import '../../../styles/global.scss';
+
+.kc-card{
+  // @include mat.elevation(3, #000, 0.17);
+  @include mat.elevation(3, #000, 0.3);
+  font-family: $font-family;
+  color: $color-text;
+  border-radius: 0.25rem;
+  padding: 1.5rem;
+  &-header{
+    margin-bottom: 0.875rem;
+    padding: 0;
+
+    &__title{
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    &.hidden{
+      display: none;
+    }
+  }
+
+  &-body{
+    margin-bottom: 0.875rem;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    &.withOutFooter{
+      margin-bottom: 0;
+    }
+  }
+
+  &-footer{
+    padding: 0;
+    &.hidden{
+      display: none;
+    }
+  }
+}
