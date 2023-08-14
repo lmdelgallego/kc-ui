@@ -637,7 +637,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../styles/global.scss';\n\n.kc-filter{\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: flex-start;\n  font-family: $font-family;\n  color: $color-text;\n  &-label{\n    margin-right: 0.5rem;\n    font-size: 0.875rem;\n    font-weight: 400;\n    color: $color-text;\n\n  }\n\n  &-items{\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    justify-content: flex-start;\n    gap: 0.375rem;\n  }\n}\n\n.kc-filter-chip {\n  cursor: pointer;\n  font-size: 14px;\n  font-weight: 400;\n  --mdc-chip-elevated-container-color: rgba(0, 98, 129, 0.05);\n\n  &.active {\n    background-color: $primary;\n    --mdc-chip-label-text-color: #fff;\n\n    .kc-filter-chip-content {\n      span {\n        margin-right: 0.5rem;\n      }\n    }\n  }\n\n  &-content {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    width: 100%;\n\n  }\n\n  &-remove {\n    color: white;\n    height: 18px;\n    width: 18px;\n    font-size: 18px;\n  }\n}\n",
+                    "data": "@import '../../../styles/global.scss';\n\n.kc-filter{\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: flex-start;\n  font-family: $font-family;\n  color: $color-text;\n  &-label{\n    margin-right: 0.5rem;\n    font-size: 0.875rem;\n    font-weight: 400;\n    color: $color-text;\n\n  }\n\n  &-items{\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    justify-content: flex-start;\n    gap: 0.375rem;\n  }\n}\n\n.kc-filter-chip {\n  cursor: pointer;\n  font-size: 0.875rem;\n  font-weight: 400;\n  --mdc-chip-elevated-container-color: #{$chip-bg};\n\n  &.active {\n    background-color: $primary;\n    --mdc-chip-label-text-color: #fff;\n\n    .kc-filter-chip-content {\n      span {\n        margin-right: 0.5rem;\n      }\n    }\n  }\n\n  &-content {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    width: 100%;\n\n  }\n\n  &-remove {\n    color: white;\n    height: 18px;\n    width: 18px;\n    font-size: 18px;\n  }\n}\n",
                     "styleUrl": "./filter.component.scss"
                 }
             ],
@@ -708,7 +708,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".bg-white {\n  background-color: #fff;\n  border: 1px solid #DADADA;\n  padding: 20px 24px;\n  height: auto;\n}\n\n.logo {\n  height: 1rem;\n  img {\n    height: inherit\n  }\n}\n",
+                    "data": "@import '../../../styles/_variables.scss';\n\n.bg-white {\n  background-color: #fff;\n  border: 1px solid $border-color;\n  padding: 20px 24px;\n  height: auto;\n}\n\n.logo {\n  height: 1rem;\n  img {\n    height: inherit\n  }\n}\n",
                     "styleUrl": "./header.component.scss"
                 }
             ],
@@ -819,7 +819,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"kc-side-nav\" *ngFor=\"let item of items\" >\n  <kc-side-nav-item [url]=\"item.url\">{{item.label}}</kc-side-nav-item>\n</div>\n"
+            "templateData": "<div class=\"kc-side-nav\" >\n  <kc-side-nav-item *ngFor=\"let item of items\" [url]=\"item.url\">{{item.label}}</kc-side-nav-item>\n</div>\n"
         },
         {
             "name": "SideNavItemComponent",
@@ -878,7 +878,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../styles/variables.scss';\n\n.kc-side-nav-item{\n  font-family: $font-family;\n  cursor: pointer;\n  padding: 0.5rem 1.5rem;\n  font-size: 1.125rem;\n  font-weight: 900;\n  line-height: 1.5rem;\n  max-width: 100%;\n  display: block;\n  text-decoration: none;\n  position: relative;\n  transition: all 0.3s ease-in-out;\n\n  &.active,\n  &:active,\n  &:hover {\n    border-left-width: 3px;\n    border-left-color: $primary;\n    color: $primary;\n    background-color: rgba(0, 0, 0, 0.03);\n\n    &::before {\n      width: 3px;\n    }\n  }\n\n  &:active{\n    background-color: rgba(0, 0, 0, 0.08);\n  }\n\n  &::before {\n    content: '';\n    display: inline-block;\n    width: 0px;\n    height: 100%;\n    position: absolute;\n    background-color: $primary;\n    top: 0;\n    left: 0;\n    transition: all 0.3s ease-in-out;\n  }\n}\n",
+                    "data": "@import '../../../styles/variables.scss';\n\n.kc-side-nav-item{\n  font-family: $font-family;\n  cursor: pointer;\n  padding: 0.5rem 1.5rem;\n  font-size: 1.125rem;\n  font-weight: 900;\n  line-height: 1.5rem;\n  max-width: 100%;\n  display: block;\n  text-decoration: none;\n  position: relative;\n  transition: all 0.3s ease-in-out;\n\n  &.active,\n  &:active,\n  &:hover {\n    border-left-width: 3px;\n    border-left-color: $primary;\n    color: $primary;\n    background-color: $bg-color-hover-nav;\n\n    &::before {\n      width: 3px;\n    }\n  }\n\n  &:active{\n    background-color: $bg-color-active-nav;\n  }\n\n  &::before {\n    content: '';\n    display: inline-block;\n    width: 0px;\n    height: 100%;\n    position: absolute;\n    background-color: $primary;\n    top: 0;\n    left: 0;\n    transition: all 0.3s ease-in-out;\n  }\n}\n",
                     "styleUrl": "./side-nav-item.component.scss"
                 }
             ],
@@ -996,31 +996,11 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  render: (args: ButtonComponent) => ({\n    props: args,\n    template: `\n      <kc-button [color]=\"color\" [disabled]=\"disabled\" [icon]=\"icon\" [iconPosition]=\"iconPosition\"  basic>\n        Button\n      </kc-button>\n    `,\n  }),\n  args: {\n    color: 'primary',\n    disabled: false,\n    icon: '',\n    iconPosition: '',\n  }\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  render: (args: CardComponent) => ({\n    props: args,\n    template: `\n      <kc-card>\n        <p>Card Content</p>\n      </kc-card>\n    `,\n  }),\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/kc-ui/src/lib/components/chip/Chip.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  render: (args: ChipComponent) => ({\n    props: args,\n  }),\n  args: {\n    label: 'Chip',\n  },\n}"
             },
             {
                 "name": "Default",
@@ -1036,11 +1016,21 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/kc-ui/src/lib/components/header/Header.stories.ts",
+                "file": "projects/kc-ui/src/lib/components/chip/Chip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: (args: HeaderComponent) => ({\n    props: args,\n    template: `\n      <kc-header\n      [urlLogo]=\"urlLogo\"\n      [homeLink]=\"'homeLink'\"\n      ></kc-header>\n    `,\n  }),\n  args: {\n    homeLink: '/home',\n    urlLogo: '../../../assets/logo.svg',\n  },\n}"
+                "defaultValue": "{\n  render: (args: ChipComponent) => ({\n    props: args,\n  }),\n  args: {\n    label: 'Chip',\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: (args: ButtonComponent) => ({\n    props: args,\n    template: `\n      <kc-button [color]=\"color\" [disabled]=\"disabled\" [icon]=\"icon\" [iconPosition]=\"iconPosition\"  basic>\n        Button\n      </kc-button>\n    `,\n  }),\n  args: {\n    color: 'primary',\n    disabled: false,\n    icon: '',\n    iconPosition: '',\n  }\n}"
             },
             {
                 "name": "Default",
@@ -1051,6 +1041,26 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  render: (args: SectionComponent) => ({\n    props: args,\n    template: `\n      <kc-section [title]=\"title\">\n        <p>Section Content</p>\n      </kc-section>\n    `,\n  }),\n  args: {\n    title: 'Section Title',\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/kc-ui/src/lib/components/side-nav/SideNavItem.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: (args: SideNavComponent) => ({\n    props: args,\n    template: `\n      <kc-side [items]=\"items\">\n        Home\n      </kc-side>\n    `,\n  }),\n  args: {\n    items: [\n      {\n        label: 'Home',\n        url: '/',\n      },\n      {\n        label: 'Page 2',\n        url: 'page2',\n      },\n    ],\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/kc-ui/src/lib/components/header/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: (args: HeaderComponent) => ({\n    props: args,\n    template: `\n      <kc-header\n      [urlLogo]=\"urlLogo\"\n      [homeLink]=\"'homeLink'\"\n      ></kc-header>\n    `,\n  }),\n  args: {\n    homeLink: '/home',\n    urlLogo: '../../../assets/logo.svg',\n  },\n}"
             },
             {
                 "name": "Default",
@@ -1116,31 +1126,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  title: 'COMPONENTS/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        MatButtonModule,\n        MatIconModule\n      ],\n    }),\n  ],\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<CardComponent>",
                 "defaultValue": "{\n  title: 'COMPONENTS/Card',\n  component: CardComponent,\n  tags: ['UI', 'Card', 'autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [MatCardModule, MatButtonModule],\n    }),\n  ],\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/kc-ui/src/lib/components/chip/Chip.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<ChipComponent>",
-                "defaultValue": "{\n  title: 'COMPONENTS/Chip',\n  component: ChipComponent,\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        MatIconModule\n      ],\n    }),\n  ],\n}"
             },
             {
                 "name": "meta",
@@ -1156,11 +1146,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/kc-ui/src/lib/components/header/Header.stories.ts",
+                "file": "projects/kc-ui/src/lib/components/chip/Chip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<HeaderComponent>",
-                "defaultValue": "{\n  title: 'UI/Header',\n  component: HeaderComponent,\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        MatToolbarModule\n      ],\n    }),\n  ],\n  parameters: {\n    // layout: 'fullscreen',\n  },\n}"
+                "type": "Meta<ChipComponent>",
+                "defaultValue": "{\n  title: 'COMPONENTS/Chip',\n  component: ChipComponent,\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        MatIconModule\n      ],\n    }),\n  ],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ButtonComponent>",
+                "defaultValue": "{\n  title: 'COMPONENTS/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        MatButtonModule,\n        MatIconModule\n      ],\n    }),\n  ],\n}"
             },
             {
                 "name": "meta",
@@ -1171,6 +1171,26 @@
                 "deprecationMessage": "",
                 "type": "Meta<SectionComponent>",
                 "defaultValue": "{\n  title: 'LAYOUT/Section',\n  tags: ['LAYOUT', 'autodocs'],\n  component: SectionComponent,\n  render: (args) => ({ props: args }),\n  parameters: {},\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule, MatButtonModule, MatIconModule],\n    }),\n  ],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/kc-ui/src/lib/components/side-nav/SideNavItem.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SideNavComponent>",
+                "defaultValue": "{\n  title: 'UI/SideNav',\n  component: SideNavComponent,\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n    }),\n  ],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/kc-ui/src/lib/components/header/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<HeaderComponent>",
+                "defaultValue": "{\n  title: 'UI/Header',\n  component: HeaderComponent,\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        MatToolbarModule\n      ],\n    }),\n  ],\n  parameters: {\n    // layout: 'fullscreen',\n  },\n}"
             },
             {
                 "name": "meta",
@@ -1260,30 +1280,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ButtonComponent>",
-                "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 180
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<CardComponent>",
                 "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 180
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<ChipComponent>",
-                "file": "projects/kc-ui/src/lib/components/chip/Chip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1304,8 +1302,19 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<HeaderComponent>",
-                "file": "projects/kc-ui/src/lib/components/header/Header.stories.ts",
+                "rawtype": "StoryObj<ChipComponent>",
+                "file": "projects/kc-ui/src/lib/components/chip/Chip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ButtonComponent>",
+                "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1317,6 +1326,28 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<SectionComponent>",
                 "file": "projects/kc-ui/src/lib/components/section/Section.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SideNavComponent>",
+                "file": "projects/kc-ui/src/lib/components/side-nav/SideNavItem.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<HeaderComponent>",
+                "file": "projects/kc-ui/src/lib/components/header/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1356,58 +1387,6 @@
                     "deprecationMessage": "",
                     "type": "Meta<BaseLayoutComponent>",
                     "defaultValue": "{\n  title: 'LAYOUT/Base',\n  tags: ['LAYOUT', 'autodocs'],\n  component: BaseLayoutComponent,\n  render: (args) => ({ props: args }),\n  parameters: {\n    layout: 'fullscreen'\n  },\n  decorators: [\n    moduleMetadata({\n      declarations: [HeaderComponent, SideNavComponent, SideNavItemComponent],\n      imports: [CommonModule , BrowserAnimationsModule, MatSidenavModule, MatToolbarModule],\n    }),\n  ],\n}"
-                }
-            ],
-            "projects/kc-ui/src/lib/components/button/Button.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  render: (args: ButtonComponent) => ({\n    props: args,\n    template: `\n      <kc-button [color]=\"color\" [disabled]=\"disabled\" [icon]=\"icon\" [iconPosition]=\"iconPosition\"  basic>\n        Button\n      </kc-button>\n    `,\n  }),\n  args: {\n    color: 'primary',\n    disabled: false,\n    icon: '',\n    iconPosition: '',\n  }\n}"
-                },
-                {
-                    "name": "Disabled",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  render: (args: ButtonComponent) => ({\n    props: args,\n    template: `\n      <kc-button [color]=\"color\" [disabled]=\"disabled\" basic>\n        Button\n      </kc-button>\n    `,\n  }),\n  args: {\n    color: 'primary',\n    disabled: true,\n  },\n}"
-                },
-                {
-                    "name": "IconLeft",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  render: (args: ButtonComponent) => ({\n    props: args,\n    template: `\n      <kc-button [color]=\"color\" [icon]=\"icon\" [iconPosition]='iconPosition'  basic>\n        Button\n      </kc-button>\n    `,\n  }),\n  args: {\n    color: 'primary',\n    icon: 'home',\n    iconPosition: 'left',\n  },\n}"
-                },
-                {
-                    "name": "IconRight",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  render: (args: ButtonComponent) => ({\n    props: args,\n    template: `\n      <kc-button color=\"primary\" [icon]='icon' [iconPosition]='iconPosition' basic>\n        Button\n      </kc-button>\n    `,\n  }),\n  args: {\n    color: 'primary',\n    icon: 'home',\n    iconPosition: 'right',\n  },\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\n  title: 'COMPONENTS/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        MatButtonModule,\n        MatIconModule\n      ],\n    }),\n  ],\n}"
                 }
             ],
             "projects/kc-ui/src/lib/components/card/Card.stories.ts": [
@@ -1462,6 +1441,28 @@
                     "defaultValue": "{\n  render: (args: CardComponent) => ({\n    props: args,\n    template: `\n      <kc-card>\n        <span card-title>Similar Card 2</span>\n        <p>Card Content</p>\n        <div card-footer>\n          <button mat-raised-button color=\"primary\">Button</button>\n        </div>\n      </kc-card>\n    `,\n  }),\n}"
                 }
             ],
+            "projects/kc-ui/src/lib/components/filter/Filter.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/kc-ui/src/lib/components/filter/Filter.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'Filter',\n    options: ['active', 'completed'],\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/kc-ui/src/lib/components/filter/Filter.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<FilterComponent>",
+                    "defaultValue": "{\n  title: 'COMPONENTS/Filter',\n  component: FilterComponent,\n  tags: ['UI', 'Filter', 'autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [MatIconModule, MatChipsModule],\n    }),\n  ],\n  parameters: {\n    // layout: 'fullscreen',\n  },\n  argTypes: {\n    options: {\n      defaultValue: ['all', 'active', 'completed'],\n      control: {\n        type: 'array',\n\n      },\n    },\n\n  },\n}"
+                }
+            ],
             "projects/kc-ui/src/lib/components/chip/Chip.stories.ts": [
                 {
                     "name": "Default",
@@ -1504,48 +1505,56 @@
                     "defaultValue": "{\n  render: (args: ChipComponent) => ({\n    props: args,\n  }),\n  args: {\n    label: 'Chip',\n    icon: 'check_circle',\n    iconPosition: 'right',\n  },\n}"
                 }
             ],
-            "projects/kc-ui/src/lib/components/filter/Filter.stories.ts": [
+            "projects/kc-ui/src/lib/components/button/Button.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/kc-ui/src/lib/components/filter/Filter.stories.ts",
+                    "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'Filter',\n    options: ['active', 'completed'],\n  },\n}"
+                    "defaultValue": "{\n  render: (args: ButtonComponent) => ({\n    props: args,\n    template: `\n      <kc-button [color]=\"color\" [disabled]=\"disabled\" [icon]=\"icon\" [iconPosition]=\"iconPosition\"  basic>\n        Button\n      </kc-button>\n    `,\n  }),\n  args: {\n    color: 'primary',\n    disabled: false,\n    icon: '',\n    iconPosition: '',\n  }\n}"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args: ButtonComponent) => ({\n    props: args,\n    template: `\n      <kc-button [color]=\"color\" [disabled]=\"disabled\" basic>\n        Button\n      </kc-button>\n    `,\n  }),\n  args: {\n    color: 'primary',\n    disabled: true,\n  },\n}"
+                },
+                {
+                    "name": "IconLeft",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args: ButtonComponent) => ({\n    props: args,\n    template: `\n      <kc-button [color]=\"color\" [icon]=\"icon\" [iconPosition]='iconPosition'  basic>\n        Button\n      </kc-button>\n    `,\n  }),\n  args: {\n    color: 'primary',\n    icon: 'home',\n    iconPosition: 'left',\n  },\n}"
+                },
+                {
+                    "name": "IconRight",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args: ButtonComponent) => ({\n    props: args,\n    template: `\n      <kc-button color=\"primary\" [icon]='icon' [iconPosition]='iconPosition' basic>\n        Button\n      </kc-button>\n    `,\n  }),\n  args: {\n    color: 'primary',\n    icon: 'home',\n    iconPosition: 'right',\n  },\n}"
                 },
                 {
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/kc-ui/src/lib/components/filter/Filter.stories.ts",
+                    "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Meta<FilterComponent>",
-                    "defaultValue": "{\n  title: 'COMPONENTS/Filter',\n  component: FilterComponent,\n  tags: ['UI', 'Filter', 'autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [MatIconModule, MatChipsModule],\n    }),\n  ],\n  parameters: {\n    // layout: 'fullscreen',\n  },\n  argTypes: {\n    options: {\n      defaultValue: ['all', 'active', 'completed'],\n      control: {\n        type: 'array',\n\n      },\n    },\n\n  },\n}"
-                }
-            ],
-            "projects/kc-ui/src/lib/components/header/Header.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/kc-ui/src/lib/components/header/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  render: (args: HeaderComponent) => ({\n    props: args,\n    template: `\n      <kc-header\n      [urlLogo]=\"urlLogo\"\n      [homeLink]=\"'homeLink'\"\n      ></kc-header>\n    `,\n  }),\n  args: {\n    homeLink: '/home',\n    urlLogo: '../../../assets/logo.svg',\n  },\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/kc-ui/src/lib/components/header/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<HeaderComponent>",
-                    "defaultValue": "{\n  title: 'UI/Header',\n  component: HeaderComponent,\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        MatToolbarModule\n      ],\n    }),\n  ],\n  parameters: {\n    // layout: 'fullscreen',\n  },\n}"
+                    "type": "Meta<ButtonComponent>",
+                    "defaultValue": "{\n  title: 'COMPONENTS/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        MatButtonModule,\n        MatIconModule\n      ],\n    }),\n  ],\n}"
                 }
             ],
             "projects/kc-ui/src/lib/components/section/Section.stories.ts": [
@@ -1578,6 +1587,50 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  render: (args: SectionComponent) => ({\n    props: args,\n    template: `\n      <kc-section [title]=\"title\">\n        <div sectionActionHeader style=\"display: flex; gap: 8px; align-items: center;\">\n          <button mat-raised-button color=\"primary\">Primary</button>\n          <button sectionActionHeader mat-icon-button >\n            <mat-icon>add</mat-icon>\n          </button>\n          <button mat-fab color=\"warn\">\n            <mat-icon>home</mat-icon>\n          </button>\n        </div>\n\n        <p>Section Content</p>\n      </kc-section>\n    `,\n  }),\n  args: {\n    title: 'Section Title',\n  },\n}"
+                }
+            ],
+            "projects/kc-ui/src/lib/components/side-nav/SideNavItem.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/kc-ui/src/lib/components/side-nav/SideNavItem.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args: SideNavComponent) => ({\n    props: args,\n    template: `\n      <kc-side [items]=\"items\">\n        Home\n      </kc-side>\n    `,\n  }),\n  args: {\n    items: [\n      {\n        label: 'Home',\n        url: '/',\n      },\n      {\n        label: 'Page 2',\n        url: 'page2',\n      },\n    ],\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/kc-ui/src/lib/components/side-nav/SideNavItem.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SideNavComponent>",
+                    "defaultValue": "{\n  title: 'UI/SideNav',\n  component: SideNavComponent,\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n    }),\n  ],\n}"
+                }
+            ],
+            "projects/kc-ui/src/lib/components/header/Header.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/kc-ui/src/lib/components/header/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args: HeaderComponent) => ({\n    props: args,\n    template: `\n      <kc-header\n      [urlLogo]=\"urlLogo\"\n      [homeLink]=\"'homeLink'\"\n      ></kc-header>\n    `,\n  }),\n  args: {\n    homeLink: '/home',\n    urlLogo: '../../../assets/logo.svg',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/kc-ui/src/lib/components/header/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<HeaderComponent>",
+                    "defaultValue": "{\n  title: 'UI/Header',\n  component: HeaderComponent,\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        MatToolbarModule\n      ],\n    }),\n  ],\n  parameters: {\n    // layout: 'fullscreen',\n  },\n}"
                 }
             ],
             "projects/kc-ui/src/lib/components/side-nav-item/SideNavItem.stories.ts": [
@@ -1631,19 +1684,6 @@
                     "kind": 180
                 }
             ],
-            "projects/kc-ui/src/lib/components/button/Button.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ButtonComponent>",
-                    "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 180
-                }
-            ],
             "projects/kc-ui/src/lib/components/card/Card.stories.ts": [
                 {
                     "name": "Story",
@@ -1651,19 +1691,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<CardComponent>",
                     "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 180
-                }
-            ],
-            "projects/kc-ui/src/lib/components/chip/Chip.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ChipComponent>",
-                    "file": "projects/kc-ui/src/lib/components/chip/Chip.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1683,13 +1710,26 @@
                     "kind": 180
                 }
             ],
-            "projects/kc-ui/src/lib/components/header/Header.stories.ts": [
+            "projects/kc-ui/src/lib/components/chip/Chip.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<HeaderComponent>",
-                    "file": "projects/kc-ui/src/lib/components/header/Header.stories.ts",
+                    "rawtype": "StoryObj<ChipComponent>",
+                    "file": "projects/kc-ui/src/lib/components/chip/Chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
+            "projects/kc-ui/src/lib/components/button/Button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ButtonComponent>",
+                    "file": "projects/kc-ui/src/lib/components/button/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1703,6 +1743,32 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<SectionComponent>",
                     "file": "projects/kc-ui/src/lib/components/section/Section.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
+            "projects/kc-ui/src/lib/components/side-nav/SideNavItem.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SideNavComponent>",
+                    "file": "projects/kc-ui/src/lib/components/side-nav/SideNavItem.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
+            "projects/kc-ui/src/lib/components/header/Header.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<HeaderComponent>",
+                    "file": "projects/kc-ui/src/lib/components/header/Header.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2077,6 +2143,26 @@
                 "name": "KcNavItemType",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/kc-ui/src/lib/components/side-nav/SideNavItem.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/kc-ui/src/lib/components/side-nav/SideNavItem.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
