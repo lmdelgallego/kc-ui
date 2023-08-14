@@ -1,0 +1,7 @@
+<div class="kc-chip" [ngClass]="cssClass">
+  <div class="kc-chip-content">
+    <mat-icon *ngIf="icon && iconPosition=='left'" class="kc-chip-icon" >{{icon}}</mat-icon>
+    <span>{{label}}</span>
+    <mat-icon *ngIf="icon && iconPosition=='right'" class="kc-chip-icon" >{{icon}}</mat-icon>
+  </div>
+</div>

@@ -51,7 +51,12 @@
 
     <ng-container matColumnDef="status">
       <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+      <mat-cell *matCellDef="let element">
+        <kc-chip class="exampleChip"
+          [ngClass]="getClassStatus(element.status)"
+          [icon]="getIconStatus(element.status)"
+          [label]="getStringCammelCase(element.status)"></kc-chip>
+        </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="actions">
@@ -75,15 +80,14 @@
       <div card-title>Similar Card 1</div>
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
       <div card-footer>
-        <kc-button type="submit" color="primary" icon="arrow_forward" iconPosition="right" basic>LIKE</kc-button>
+        <kc-button type="submit" color="primary" icon="arrow_forward" iconPosition="right" basic>Explore Similar Study</kc-button>
       </div>
     </kc-card>
     <kc-card>
       <div card-title>Similar Card 2</div>
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
       <div card-footer>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
+        <kc-button type="submit" color="primary" icon="arrow_forward" iconPosition="right" basic>Explore Similar Study</kc-button>
       </div>
     </kc-card>
   </div>

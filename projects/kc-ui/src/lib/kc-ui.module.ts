@@ -18,6 +18,7 @@ import { CardComponent } from './components/card/card.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { SideNavItemComponent } from './components/side-nav-item/side-nav-item.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { ChipComponent } from './components/chip/chip.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
     FilterComponent,
     SideNavItemComponent,
     SideNavComponent,
+    ChipComponent,
   ],
   imports: [
     CommonModule,
@@ -50,6 +52,7 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
     FilterComponent,
     SideNavItemComponent,
     SideNavComponent,
+    ChipComponent,
   ],
 })
 export class KcUiModule {}

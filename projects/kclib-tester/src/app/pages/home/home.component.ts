@@ -61,6 +61,36 @@ export class HomeComponent {
   constructor() {}
 
   changeFilter = (filter: string) => {
-    console.log(filter);
+    if (!filter) {
+      this.dataSource = ELEMENT_DATA;
+      return;
+    }
+    this.dataSource = ELEMENT_DATA.filter((item) => item.status === filter);
+  };
+
+  getStringCammelCase = (str: string) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
+  getIconStatus = (status: string) => {
+    switch (status) {
+      case 'accepted':
+        return 'check_circle';
+      case 'declined':
+        return 'cancel';
+      default:
+        return '';
+    }
+  };
+
+  getClassStatus = (status: string) => {
+    switch (status) {
+      case 'accepted':
+        return 'accepted';
+      case 'declined':
+        return 'declined';
+      default:
+        return '';
+    }
   };
 }

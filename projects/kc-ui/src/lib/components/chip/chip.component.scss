@@ -1,0 +1,21 @@
+@import '../../../styles/global.scss';
+
+.kc-chip {
+  height: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: $font-family;
+
+  &-content {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  &-icon {
+    color: inherit;
+    height: 1em;
+    width: 1em;
+    font-size: 1em;
+  }
+}

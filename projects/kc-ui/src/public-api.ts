@@ -13,3 +13,4 @@ export * from './lib/components/card/card.component';
 export * from './lib/components/filter/filter.component';
 export * from './lib/components/side-nav/side-nav.component';
 export * from './lib/components/side-nav-item/side-nav-item.component';
+export * from './lib/components/chip/chip.component';
