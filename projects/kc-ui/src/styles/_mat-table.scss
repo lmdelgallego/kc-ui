@@ -1,0 +1,6 @@
+@import './variables.scss';
+
+.mat-mdc-header-row{
+  text-transform: uppercase;
+  color: $color-table-header !important;
+}
