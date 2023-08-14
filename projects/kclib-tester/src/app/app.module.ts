@@ -5,12 +5,12 @@ import { KcUiModule } from 'kc-ui';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { Page2Component } from './pages/page2/page2.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +23,7 @@ import { Page2Component } from './pages/page2/page2.component';
     BrowserAnimationsModule,
     MatTableModule,
     MatExpansionModule,
+    MatTabsModule,
     KcUiModule,
   ],
   providers: [],

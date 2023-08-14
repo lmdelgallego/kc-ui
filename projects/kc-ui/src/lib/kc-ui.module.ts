@@ -7,6 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { ButtonComponent } from './components/button/button.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -42,6 +43,7 @@ import { ChipComponent } from './components/chip/chip.component';
     MatIconModule,
     MatChipsModule,
     MatButtonModule,
+    MatTabsModule,
   ],
   exports: [
     ButtonComponent,

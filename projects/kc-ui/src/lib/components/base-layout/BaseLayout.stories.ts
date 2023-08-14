@@ -16,7 +16,7 @@ const meta: Meta<BaseLayoutComponent> = {
   component: BaseLayoutComponent,
   render: (args) => ({ props: args }),
   parameters: {
-    layout: 'fullscreen',
+    layout: 'fullscreen'
   },
   decorators: [
     moduleMetadata({
