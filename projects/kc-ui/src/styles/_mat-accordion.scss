@@ -1,0 +1,9 @@
+.mat-expansion-panel-header-title{
+  font-weight: 700;
+}
+
+.mat-expansion-indicator {
+  &::after{
+    padding: 7px !important;
+  }
+}
