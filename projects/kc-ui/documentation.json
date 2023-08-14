@@ -278,7 +278,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../styles/global.scss';\n\n.kc-button{\n  font-family: $font-family;\n}\n",
+                    "data": "@import '../../../styles/global.scss';\n\n.kc-button{\n  font-family: $font-family;\n  font-weight: inherit;\n}\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -419,7 +419,7 @@
         },
         {
             "name": "ChipComponent",
-            "id": "component-ChipComponent-79d8dda6f70f127e58fcaa37a1db409baa5ffbb8ef025fde0d4c5510c02978e06f252303fa4e0f1a9ad00360ff5410f4691fe29eb77e2d39e5ae3eab53f4980f",
+            "id": "component-ChipComponent-a8cd0276f53fa654fc48e0f1667e802aa8e87b566f6d60f2068b78b91ac2ea63874d6a8b805fda37d0971ca8feeee0224bd02743166ebb490bfb86212cd8704b",
             "file": "projects/kc-ui/src/lib/components/chip/chip.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -438,15 +438,6 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
-                    "name": "color",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 11,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
                     "name": "cssClass",
                     "defaultValue": "''",
                     "deprecated": false,
@@ -460,7 +451,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 11,
                     "type": "string",
                     "decorators": []
                 },
@@ -469,7 +460,7 @@
                     "defaultValue": "'left'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 12,
                     "type": "string",
                     "decorators": []
                 },
@@ -495,7 +486,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'kc-chip',\n  templateUrl: './chip.component.html',\n  styleUrls: ['./chip.component.scss'],\n})\nexport class ChipComponent {\n  @Input('cssClass') cssClass: string = '';\n  @Input('label') label: string = '';\n  @Input('color') color: string = '';\n  @Input('icon') icon: string = '';\n  @Input('iconPosition') iconPosition: string = 'left';\n\n  constructor() {}\n\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'kc-chip',\n  templateUrl: './chip.component.html',\n  styleUrls: ['./chip.component.scss'],\n})\nexport class ChipComponent {\n  @Input('cssClass') cssClass: string = '';\n  @Input('label') label: string = '';\n  @Input('icon') icon: string = '';\n  @Input('iconPosition') iconPosition: string = 'left';\n\n  constructor() {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -510,7 +501,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 13
+                "line": 12
             },
             "templateData": "<div class=\"kc-chip\" [ngClass]=\"cssClass\">\n  <div class=\"kc-chip-content\">\n    <mat-icon *ngIf=\"icon && iconPosition=='left'\" class=\"kc-chip-icon\" >{{icon}}</mat-icon>\n    <span>{{label}}</span>\n    <mat-icon *ngIf=\"icon && iconPosition=='right'\" class=\"kc-chip-icon\" >{{icon}}</mat-icon>\n  </div>\n</div>\n"
         },
@@ -995,16 +986,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  render: (args: CardComponent) => ({\n    props: args,\n    template: `\n      <kc-card>\n        <p>Card Content</p>\n      </kc-card>\n    `,\n  }),\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/kc-ui/src/lib/components/base-layout/BaseLayout.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1025,11 +1006,11 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/kc-ui/src/lib/components/filter/Filter.stories.ts",
+                "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Filter',\n    options: ['active', 'completed'],\n  },\n}"
+                "defaultValue": "{\n  render: (args: CardComponent) => ({\n    props: args,\n    template: `\n      <kc-card>\n        <p>Card Content</p>\n      </kc-card>\n    `,\n  }),\n}"
             },
             {
                 "name": "Default",
@@ -1039,7 +1020,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: (args: ChipComponent) => ({\n    props: args,\n  }),\n  args: {\n    label: 'Chip',\n    color: 'primary',\n  }\n}"
+                "defaultValue": "{\n  render: (args: ChipComponent) => ({\n    props: args,\n  }),\n  args: {\n    label: 'Chip',\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/kc-ui/src/lib/components/filter/Filter.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'Filter',\n    options: ['active', 'completed'],\n  },\n}"
             },
             {
                 "name": "Default",
@@ -1102,14 +1093,14 @@
                 "defaultValue": "{\n  render: (args: ButtonComponent) => ({\n    props: args,\n    template: `\n      <kc-button color=\"primary\" [icon]='icon' [iconPosition]='iconPosition' basic>\n        Button\n      </kc-button>\n    `,\n  }),\n  args: {\n    color: 'primary',\n    icon: 'home',\n    iconPosition: 'right',\n  },\n}"
             },
             {
-                "name": "meta",
+                "name": "LeftIcon",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
+                "file": "projects/kc-ui/src/lib/components/chip/Chip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<CardComponent>",
-                "defaultValue": "{\n  title: 'COMPONENTS/Card',\n  component: CardComponent,\n  tags: ['UI', 'Card', 'autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [MatCardModule, MatButtonModule],\n    }),\n  ],\n}"
+                "type": "Story",
+                "defaultValue": "{\n  render: (args: ChipComponent) => ({\n    props: args,\n  }),\n  args: {\n    label: 'Chip',\n    icon: 'check_circle',\n    iconPosition: 'left',\n  },\n}"
             },
             {
                 "name": "meta",
@@ -1135,11 +1126,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/kc-ui/src/lib/components/filter/Filter.stories.ts",
+                "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<FilterComponent>",
-                "defaultValue": "{\n  title: 'COMPONENTS/Filter',\n  component: FilterComponent,\n  tags: ['UI', 'Filter', 'autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [MatIconModule, MatChipsModule],\n    }),\n  ],\n  parameters: {\n    // layout: 'fullscreen',\n  },\n  argTypes: {\n    options: {\n      defaultValue: ['all', 'active', 'completed'],\n      control: {\n        type: 'array',\n\n      },\n    },\n\n  },\n}"
+                "type": "Meta<CardComponent>",
+                "defaultValue": "{\n  title: 'COMPONENTS/Card',\n  component: CardComponent,\n  tags: ['UI', 'Card', 'autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [MatCardModule, MatButtonModule],\n    }),\n  ],\n}"
             },
             {
                 "name": "meta",
@@ -1150,6 +1141,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<ChipComponent>",
                 "defaultValue": "{\n  title: 'COMPONENTS/Chip',\n  component: ChipComponent,\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        MatIconModule\n      ],\n    }),\n  ],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/kc-ui/src/lib/components/filter/Filter.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<FilterComponent>",
+                "defaultValue": "{\n  title: 'COMPONENTS/Filter',\n  component: FilterComponent,\n  tags: ['UI', 'Filter', 'autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [MatIconModule, MatChipsModule],\n    }),\n  ],\n  parameters: {\n    // layout: 'fullscreen',\n  },\n  argTypes: {\n    options: {\n      defaultValue: ['all', 'active', 'completed'],\n      control: {\n        type: 'array',\n\n      },\n    },\n\n  },\n}"
             },
             {
                 "name": "meta",
@@ -1202,6 +1203,16 @@
                 "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
             },
             {
+                "name": "RightIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/kc-ui/src/lib/components/chip/Chip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: (args: ChipComponent) => ({\n    props: args,\n  }),\n  args: {\n    label: 'Chip',\n    icon: 'check_circle',\n    iconPosition: 'right',\n  },\n}"
+            },
+            {
                 "name": "WithFooter",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1238,17 +1249,6 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<CardComponent>",
-                "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 180
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<BaseLayoutComponent>",
                 "file": "projects/kc-ui/src/lib/components/base-layout/BaseLayout.stories.ts",
                 "deprecated": false,
@@ -1271,8 +1271,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<FilterComponent>",
-                "file": "projects/kc-ui/src/lib/components/filter/Filter.stories.ts",
+                "rawtype": "StoryObj<CardComponent>",
+                "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1284,6 +1284,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<ChipComponent>",
                 "file": "projects/kc-ui/src/lib/components/chip/Chip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<FilterComponent>",
+                "file": "projects/kc-ui/src/lib/components/filter/Filter.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1325,58 +1336,6 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "projects/kc-ui/src/lib/components/card/Card.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  render: (args: CardComponent) => ({\n    props: args,\n    template: `\n      <kc-card>\n        <p>Card Content</p>\n      </kc-card>\n    `,\n  }),\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<CardComponent>",
-                    "defaultValue": "{\n  title: 'COMPONENTS/Card',\n  component: CardComponent,\n  tags: ['UI', 'Card', 'autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [MatCardModule, MatButtonModule],\n    }),\n  ],\n}"
-                },
-                {
-                    "name": "WithFooter",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  render: (args: CardComponent) => ({\n    props: args,\n    template: `\n      <kc-card>\n      <p>Card Content</p>\n      <div card-footer>\n          <button mat-raised-button color=\"primary\">Button</button>\n        </div>\n      </kc-card>\n    `,\n  }),\n}"
-                },
-                {
-                    "name": "WithHeader",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  render: (args: CardComponent) => ({\n    props: args,\n    template: `\n      <kc-card>\n        <div card-title>Similar Card 2</div>\n        <p>Card Content</p>\n      </kc-card>\n    `,\n  }),\n}"
-                },
-                {
-                    "name": "WithHeaderAndFooter",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  render: (args: CardComponent) => ({\n    props: args,\n    template: `\n      <kc-card>\n        <span card-title>Similar Card 2</span>\n        <p>Card Content</p>\n        <div card-footer>\n          <button mat-raised-button color=\"primary\">Button</button>\n        </div>\n      </kc-card>\n    `,\n  }),\n}"
-                }
-            ],
             "projects/kc-ui/src/lib/components/base-layout/BaseLayout.stories.ts": [
                 {
                     "name": "Default",
@@ -1451,6 +1410,100 @@
                     "defaultValue": "{\n  title: 'COMPONENTS/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        MatButtonModule,\n        MatIconModule\n      ],\n    }),\n  ],\n}"
                 }
             ],
+            "projects/kc-ui/src/lib/components/card/Card.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args: CardComponent) => ({\n    props: args,\n    template: `\n      <kc-card>\n        <p>Card Content</p>\n      </kc-card>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CardComponent>",
+                    "defaultValue": "{\n  title: 'COMPONENTS/Card',\n  component: CardComponent,\n  tags: ['UI', 'Card', 'autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [MatCardModule, MatButtonModule],\n    }),\n  ],\n}"
+                },
+                {
+                    "name": "WithFooter",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args: CardComponent) => ({\n    props: args,\n    template: `\n      <kc-card>\n      <p>Card Content</p>\n      <div card-footer>\n          <button mat-raised-button color=\"primary\">Button</button>\n        </div>\n      </kc-card>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "WithHeader",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args: CardComponent) => ({\n    props: args,\n    template: `\n      <kc-card>\n        <div card-title>Similar Card 2</div>\n        <p>Card Content</p>\n      </kc-card>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "WithHeaderAndFooter",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args: CardComponent) => ({\n    props: args,\n    template: `\n      <kc-card>\n        <span card-title>Similar Card 2</span>\n        <p>Card Content</p>\n        <div card-footer>\n          <button mat-raised-button color=\"primary\">Button</button>\n        </div>\n      </kc-card>\n    `,\n  }),\n}"
+                }
+            ],
+            "projects/kc-ui/src/lib/components/chip/Chip.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/kc-ui/src/lib/components/chip/Chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args: ChipComponent) => ({\n    props: args,\n  }),\n  args: {\n    label: 'Chip',\n  },\n}"
+                },
+                {
+                    "name": "LeftIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/kc-ui/src/lib/components/chip/Chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args: ChipComponent) => ({\n    props: args,\n  }),\n  args: {\n    label: 'Chip',\n    icon: 'check_circle',\n    iconPosition: 'left',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/kc-ui/src/lib/components/chip/Chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ChipComponent>",
+                    "defaultValue": "{\n  title: 'COMPONENTS/Chip',\n  component: ChipComponent,\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        MatIconModule\n      ],\n    }),\n  ],\n}"
+                },
+                {
+                    "name": "RightIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/kc-ui/src/lib/components/chip/Chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args: ChipComponent) => ({\n    props: args,\n  }),\n  args: {\n    label: 'Chip',\n    icon: 'check_circle',\n    iconPosition: 'right',\n  },\n}"
+                }
+            ],
             "projects/kc-ui/src/lib/components/filter/Filter.stories.ts": [
                 {
                     "name": "Default",
@@ -1471,28 +1524,6 @@
                     "deprecationMessage": "",
                     "type": "Meta<FilterComponent>",
                     "defaultValue": "{\n  title: 'COMPONENTS/Filter',\n  component: FilterComponent,\n  tags: ['UI', 'Filter', 'autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [MatIconModule, MatChipsModule],\n    }),\n  ],\n  parameters: {\n    // layout: 'fullscreen',\n  },\n  argTypes: {\n    options: {\n      defaultValue: ['all', 'active', 'completed'],\n      control: {\n        type: 'array',\n\n      },\n    },\n\n  },\n}"
-                }
-            ],
-            "projects/kc-ui/src/lib/components/chip/Chip.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/kc-ui/src/lib/components/chip/Chip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  render: (args: ChipComponent) => ({\n    props: args,\n  }),\n  args: {\n    label: 'Chip',\n    color: 'primary',\n  }\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/kc-ui/src/lib/components/chip/Chip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<ChipComponent>",
-                    "defaultValue": "{\n  title: 'COMPONENTS/Chip',\n  component: ChipComponent,\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        MatIconModule\n      ],\n    }),\n  ],\n}"
                 }
             ],
             "projects/kc-ui/src/lib/components/header/Header.stories.ts": [
@@ -1587,19 +1618,6 @@
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
-            "projects/kc-ui/src/lib/components/card/Card.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<CardComponent>",
-                    "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 180
-                }
-            ],
             "projects/kc-ui/src/lib/components/base-layout/BaseLayout.stories.ts": [
                 {
                     "name": "Story",
@@ -1626,13 +1644,13 @@
                     "kind": 180
                 }
             ],
-            "projects/kc-ui/src/lib/components/filter/Filter.stories.ts": [
+            "projects/kc-ui/src/lib/components/card/Card.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<FilterComponent>",
-                    "file": "projects/kc-ui/src/lib/components/filter/Filter.stories.ts",
+                    "rawtype": "StoryObj<CardComponent>",
+                    "file": "projects/kc-ui/src/lib/components/card/Card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1646,6 +1664,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ChipComponent>",
                     "file": "projects/kc-ui/src/lib/components/chip/Chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
+            "projects/kc-ui/src/lib/components/filter/Filter.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<FilterComponent>",
+                    "file": "projects/kc-ui/src/lib/components/filter/Filter.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1870,7 +1901,27 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "LeftIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/kc-ui/src/lib/components/chip/Chip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/kc-ui/src/lib/components/chip/Chip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "RightIcon",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1881,7 +1932,7 @@
                 "linktype": "component",
                 "name": "ChipComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {

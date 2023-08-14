@@ -21,7 +21,6 @@ const meta: Meta<ChipComponent> = {
 };
 
 export default meta;
-
 type Story = StoryObj<ChipComponent>;
 export const Default: Story = {
   render: (args: ChipComponent) => ({
@@ -29,6 +28,26 @@ export const Default: Story = {
   }),
   args: {
     label: 'Chip',
-    color: 'primary',
-  }
+  },
+};
+
+export const LeftIcon: Story = {
+  render: (args: ChipComponent) => ({
+    props: args,
+  }),
+  args: {
+    label: 'Chip',
+    icon: 'check_circle',
+    iconPosition: 'left',
+  },
+};
+export const RightIcon: Story = {
+  render: (args: ChipComponent) => ({
+    props: args,
+  }),
+  args: {
+    label: 'Chip',
+    icon: 'check_circle',
+    iconPosition: 'right',
+  },
 };

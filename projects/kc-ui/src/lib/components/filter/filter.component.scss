@@ -26,9 +26,9 @@
 
 .kc-filter-chip {
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
-  --mdc-chip-elevated-container-color: rgba(0, 98, 129, 0.05);
+  --mdc-chip-elevated-container-color: #{$chip-bg};
 
   &.active {
     background-color: $primary;

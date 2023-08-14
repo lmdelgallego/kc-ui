@@ -1,6 +1,8 @@
+@import '../../../styles/_variables.scss';
+
 .bg-white {
   background-color: #fff;
-  border: 1px solid #DADADA;
+  border: 1px solid $border-color;
   padding: 20px 24px;
   height: auto;
 }

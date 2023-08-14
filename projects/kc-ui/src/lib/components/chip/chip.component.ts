@@ -8,10 +8,8 @@ import { Component, Input } from '@angular/core';
 export class ChipComponent {
   @Input('cssClass') cssClass: string = '';
   @Input('label') label: string = '';
-  @Input('color') color: string = '';
   @Input('icon') icon: string = '';
   @Input('iconPosition') iconPosition: string = 'left';
 
   constructor() {}
-
 }
